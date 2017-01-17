@@ -13,3 +13,15 @@
  *= require_tree .
  *= require_self
  */
+
+.application-container{
+  width: 600px;
+  margin: 10px auto;
+  border: 1px solid red;
+}
+
+@media (max-width: 600px) {
+  .application-container{
+    width: 100%;
+  }
+}

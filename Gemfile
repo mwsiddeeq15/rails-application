@@ -32,6 +32,13 @@ gem 'jbuilder', '~> 2.5'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
+# React for Rails: https://github.com/reactjs/react-rails
+gem 'react-rails', '~> 1.10.0'
+# React Boostrap for Rails: https://github.com/mariopeixoto/react-bootstrap-rails
+gem 'react-bootstrap-rails', '~> 0.30.2'
+# LESS for Rails
+# gem 'less-rails', '~> 2.8.0'
+
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
