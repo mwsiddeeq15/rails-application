@@ -36,8 +36,12 @@ gem 'jbuilder', '~> 2.5'
 gem 'react-rails', '~> 1.10.0'
 # React Boostrap for Rails: https://github.com/mariopeixoto/react-bootstrap-rails
 gem 'react-bootstrap-rails', '~> 0.30.2'
-# LESS for Rails
-# gem 'less-rails', '~> 2.8.0'
+# React Flux for Rails: https://github.com/Bunlong/react-flux-rails
+gem 'react-flux-rails', '~> 2.6.4'
+# Ruby->JS variable injection: https://github.com/gazay/gon
+gem 'gon', '~> 6.0.1'
+# React Redux for Rails: https://github.com/alexkonrad/react-redux-rails
+# gem 'react-redux-rails', '~> 3.1.0.2'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development

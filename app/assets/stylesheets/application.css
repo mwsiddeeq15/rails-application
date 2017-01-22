@@ -14,10 +14,19 @@
  *= require_self
  */
 
+*{
+  font-family: monospace;
+}
+
+body{
+  background-color: #0d3068;
+}
+
 .application-container{
+  height: 600px;
   width: 600px;
   margin: 10px auto;
-  border: 1px solid red;
+  color: white;
 }
 
 @media (max-width: 600px) {

@@ -15,6 +15,7 @@
 //= require turbolinks
 //= require react
 //= require react_ujs
+//= require react-flux
 //= require react_bootstrap
 //= require components
 //= require_tree .

@@ -10,9 +10,36 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 0) do
+ActiveRecord::Schema.define(version: 20170117152022) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "cat_dog_surveys", force: :cascade do |t|
+    t.integer  "users_id"
+    t.boolean  "cat"
+    t.boolean  "dog"
+    t.boolean  "predicted"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["users_id"], name: "index_cat_dog_surveys_on_users_id", using: :btree
+  end
+
+  create_table "user_infos", force: :cascade do |t|
+    t.integer  "users_id"
+    t.integer  "age"
+    t.integer  "height"
+    t.integer  "weight"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["users_id"], name: "index_user_infos_on_users_id", using: :btree
+  end
+
+  create_table "users", force: :cascade do |t|
+    t.string   "name"
+    t.boolean  "anonymous"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
 end
