@@ -40,6 +40,10 @@
       border-style: dashed !important;
       font-weight: 400;
       font-size: 18px;
+
+      @media screen and (max-width: 630px) {
+        display: none;
+      }
     }
   }
 
@@ -127,7 +131,7 @@
       transform: rotate(9deg);
     }
 
-    @media screen and (max-width: 600px) {
+    @media screen and (max-width: 630px) {
       position: relative;
       margin: 5px auto;
       top: auto;
@@ -160,7 +164,7 @@
       width: 50px;
     }
 
-    @media screen and (max-width: 600px) {
+    @media screen and (max-width: 630px) {
       position: relative;
       margin: 5px auto;
       top: auto;

@@ -1,5 +1,6 @@
 const { Button } = ReactBootstrap;
 
+// SubView, in order of navigation
 const viewRegister = [
   { name: "Welcome", message: "Welcome my padawan, I am Jedi Master Mostradamus." },
   { name: "Form", message: "You 'WANT' to fill this form out..." },
@@ -26,6 +27,14 @@ const AskMo = React.createClass({
 
   componentWillMount() {
     this.goTo(0);
+  },
+
+  componentDidMount() {
+    window.addEventListener("resize", (e) => {
+      if(window.innerWidth < 630){
+        this.setState({showData: false});
+      }
+    });
   },
 
   goTo(view) {
