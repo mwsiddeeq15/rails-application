@@ -16,16 +16,13 @@ const Card = React.createClass({
   },
 
   render() {
-    const imgStyle = {
-      backgroundImage: `url("${this.props.type}.png")`
-    };
     var selected = this.props.selected ? "selected" : "",
       flipped = this.props.flipped ? "flipped" : "";
 
     return (
       <div className={`card ${selected}`} onClick={this.onSelect}>
         <div className={`front ${flipped}`}>
-          <div className="image" style={imgStyle}/>
+          <div className={`image ${this.props.type}`}/>
         </div>
         <div className={`back ${flipped}`}>
           <div className="image"/>
