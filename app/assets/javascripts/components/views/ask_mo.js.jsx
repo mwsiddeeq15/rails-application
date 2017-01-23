@@ -2,7 +2,7 @@ const { Button } = ReactBootstrap;
 
 const viewRegister = [
   { name: "Welcome", message: "Welcome my padawan, I am Jedi Master Mostradamus." },
-  { name: "Form", message: "You want to fill this form out." },
+  { name: "Form", message: "You 'WANT' to fill this form out..." },
   { name: "Select", message: "Select a card, any card (hint: the one with your favorite pet)." },
   { name: "Prediction", message: "hmmmm... tap into the Force, I must...." }
 ];

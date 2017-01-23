@@ -46,6 +46,48 @@
   .data-view{
     float: left;
     background-color: rgba(13, 48, 104, .75);
+
+    button{
+      margin: 20px;
+      font-size: 16px;
+    }
+
+    svg{
+      text.predicted{
+        font-size: 10px;
+        stroke: rgba(255,255,255,.1);
+      }
+      rect.predicted{
+        fill: rgba(0,0,0,.7);
+      }
+    }
+
+    .legend{
+      float: right;
+      position: relative;
+      width: 120px;
+      padding: 7px;
+      background-color: rgba(13, 48, 125, .80);
+
+      .sample{
+        display: inline-block;
+        position: absolute;
+        right: 0;
+        height: 12px;
+        width: 12px;
+        margin: 4px;
+      }
+
+      .cats .sample{
+        background-color: rgb(31, 119, 180);
+      }
+      .dogs .sample{
+        background-color: rgb(255, 127, 14);
+      }
+      .predicted .sample{
+        background-color: rgba(0,0,0,.9);
+      }
+    }
   }
 
   .mostradamus{
@@ -132,26 +174,6 @@
         height: 160px;
         width: 110px;
       }
-    }
-  }
-
-  .chart{
-    .axis path,
-    .axis line {
-      fill: none;
-      stroke: #000;
-      // shape-rendering: crispEdges;
-    }
-
-    .dot {
-      stroke: #000;
-    }
-
-    .tooltip {
-      position: absolute;
-      width: 200px;
-      height: 28px;
-      pointer-events: none;
     }
   }
 
