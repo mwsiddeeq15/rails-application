@@ -10,8 +10,9 @@ const Card = React.createClass({
   },
 
   onSelect(e) {
-    if(this.props.onClick)
+    if(this.props.onClick){
       this.props.onClick(e);
+    }
   },
 
   render() {
@@ -21,7 +22,6 @@ const Card = React.createClass({
     var selected = this.props.selected ? "selected" : "",
       flipped = this.props.flipped ? "flipped" : "";
 
-    // <div className="image" style={imgStyle}/>
     return (
       <div className={`card ${selected}`} onClick={this.onSelect}>
         <div className={`front ${flipped}`}>
@@ -34,12 +34,4 @@ const Card = React.createClass({
     );
   }
 
-  // <div className="sides">
-  //   <div className="front">
-  //     <div className="image" style={{backgroundImage: 'url("cat.png")'}}/>
-  //   </div>
-  //   <div className="back">
-  //     <div className="image" style={{backgroundImage: 'url("dog.png")'}}/>
-  //   </div>
-  // </div>
 });

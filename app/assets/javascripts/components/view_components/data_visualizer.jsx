@@ -38,70 +38,6 @@ const DataVisualizer = React.createClass({
     return this.state.data;
   },
 
-  // Put data into groups so I can chart the statistics
-  groupData(attr, delta, sections) {
-    var data = this.getData().sort((a,b) => a[attr] - b[attr]),
-      grouped = [];
-
-    if(data.length){
-      var max = data[data.length-1][attr];
-
-      delta = Math.ceil(delta || max/sections);
-      sections = Math.ceil(sections || max/delta);
-
-      for(var i=0; i<sections; i++){
-        var begin = i > 0 ? grouped[i-1].range[1] : 0;
-        var end = begin + delta;
-        var beginIndex = _.findIndex(data, (d) => d[attr] >= begin && d[attr] < end);
-        var endIndex = beginIndex > -1 ? _.findIndex(data, (d) => d[attr] > end, beginIndex) : beginIndex;
-        var slice = beginIndex > -1 ? ( endIndex > -1 ? data.slice(beginIndex, endIndex) : data.slice(beginIndex, beginIndex+1) ) : [];
-
-        grouped.push({
-          range: [begin, end],
-          data: slice
-        });
-      }
-    }
-
-    return grouped;
-  },
-
-  // Compile data and return 'grouped' data with statistics
-  analyzeData(delta, sections) {
-    var groupedData = {
-      height: this.groupData("height", delta, sections),
-      weight: this.groupData("weight", delta, sections)
-    };
-
-    var analysis = {
-      height: [],
-      weight: []
-    };
-
-    for(attr in analysis){
-      let attrGroup = groupedData[attr],
-        analysisGroup = analysis[attr];
-
-      for(var i=0; i<attrGroup.length; i++){
-        let section = attrGroup[i],
-          cats = section.data.filter((record) => record.cat === true),
-          dogs = section.data.filter((record) => record.dog === true),
-          catsPredicted = cats.filter((record) => record.predicted === true),
-          dogsPredicted = dogs.filter((record) => record.predicted === true);
-
-        analysisGroup.push({
-          range: section.range,
-          cats: cats.length,
-          dogs: dogs.length,
-          catsPredicted: catsPredicted.length,
-          dogsPredicted: dogsPredicted.length
-        });
-      }
-    }
-
-    return analysis;
-  },
-
   // Draw SVG
   drawChart(data){
     var bars = ["cats", "dogs"],
@@ -233,7 +169,7 @@ const DataVisualizer = React.createClass({
 
   redraw(tm) {
     setTimeout(() => {
-      var data = this.analyzeData(null, this.state.groups);
+      var data = dataHelpers.analyzeData(this.getData(), null, this.state.groups);
       this.drawChart(data[this.state.attribute]);
     }, tm);
   },

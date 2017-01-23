@@ -33,16 +33,9 @@ const CardPicker = React.createClass({
     );
   },
 
-  renderHeader() {
-    var {header} = this.props;
-
-    return header ? <h3>{header}</h3> : undefined;
-  },
-
   render() {
     return (
       <div className="card-picker">
-        {this.renderHeader()}
         {this.renderCards()}
       </div>
     );

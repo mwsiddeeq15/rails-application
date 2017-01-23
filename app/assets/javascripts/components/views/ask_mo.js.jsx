@@ -1,6 +1,6 @@
 const { Button } = ReactBootstrap;
 
-// SubView, in order of navigation
+// SubView, 'in order' of navigation
 const viewRegister = [
   { name: "Welcome", message: "Welcome my padawan, I am Jedi Master Mostradamus." },
   { name: "Form", message: "You 'WANT' to fill this form out..." },
@@ -136,7 +136,7 @@ const AskMo = React.createClass({
   predictCard() {
     var data = this.refs.dataView.getData();
     // PREDICTION ALGORITHM
-    this.state.prediction = predictionAlgorithm(data, this.state.userInfo);
+    this.state.prediction = predictionHelpers.predictionAlgorithm(data, this.state.userInfo);
   },
 
   revealPrediction() {
@@ -155,7 +155,6 @@ const AskMo = React.createClass({
   },
 
   renderWelcome() {
-    // this.setMessage("Welcome, my name is Mostradamus.");
     return (
       <div className="view-container">
         <Button onClick={this.next}>Next..</Button>

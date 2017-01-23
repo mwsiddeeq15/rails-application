@@ -40,6 +40,10 @@ gem 'react-bootstrap-rails', '~> 0.30.2'
 gem 'react-flux-rails', '~> 2.6.4'
 # Ruby->JS variable injection: https://github.com/gazay/gon
 gem 'gon', '~> 6.0.1'
+# Jasmine Javascript Unit-Testing: https://github.com/searls/jasmine-rails
+gem 'jasmine-rails', '~> 0.14.1'
+# Lodash (necessary to define '_' in Jasmine unit-tests): https://github.com/rh/lodash-rails
+gem 'lodash-rails', '~> 4.17.2'
 # React Redux for Rails: https://github.com/alexkonrad/react-redux-rails
 # gem 'react-redux-rails', '~> 3.1.0.2'
 

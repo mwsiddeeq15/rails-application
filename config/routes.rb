@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
-  # get 'askmo/index'
+  mount JasmineRails::Engine => '/specs' if defined?(JasmineRails)
+
   root 'askmo#index'
   match 'askmo', :to => 'askmo#index', :via => :get
 
