@@ -99,7 +99,7 @@
     height: 300px;
     width: 95%;
     margin: 10px auto;
-    background: url('mostradamus-2x.png');
+    background: url(<%= asset_path 'mostradamus-2x.png' %>);
     background-size: contain;
     background-repeat: no-repeat;
     background-position: calc(50% + 15px) 50%;
@@ -144,7 +144,7 @@
     right: calc(50% - 285px);
     left: calc(50% + 60px);
     height: 150px;
-    background: url('thought.png');
+    background: url(<%= asset_path 'thought.png' %>);
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
@@ -226,10 +226,10 @@
       background-position: center;
 
       &.cat{
-        background-image: url("cat.png");
+        background-image: url(<%= asset_path 'cat.png' %>);
       }
       &.dog{
-        background-image: url("dog.png");
+        background-image: url(<%= asset_path 'dog.png' %>);
       }
     }
 
