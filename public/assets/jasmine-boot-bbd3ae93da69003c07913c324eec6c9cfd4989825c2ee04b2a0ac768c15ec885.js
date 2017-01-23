@@ -1,0 +1,1 @@
+var jsApiReporter;!function(){function e(){t.execute()}var t=jasmine.getEnv();jsApiReporter=new jasmine.JsApiReporter,t.addReporter(jsApiReporter);var n=new jasmine.HtmlReporter;t.addReporter(n),t.specFilter=function(e){return n.specFilter(e)},window.addEventListener?window.addEventListener("load",e,!1):window.attachEvent&&window.attachEvent("onload",e)}();
